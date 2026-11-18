@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships | CampusConnect</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6fb;
+            color: #222;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav {
+            background: #1e3a8a;
+            padding: 16px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #2563eb, #172554);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .hero h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .container h2 {
+            color: #172554;
+            margin-bottom: 25px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid #2563eb;
+        }
+
+        .card h3 {
+            color: #172554;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 7px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background: #172554;
+        }
+
+        .tips {
+            background: white;
+            padding: 30px;
+            margin-top: 35px;
+            border-radius: 12px;
+            line-height: 2;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CampusConnect</h1>
+    <p>Smart Student Hub</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about">About</a>
+    <a href="dashboard">Dashboard</a>
+    <a href="internships">Internships</a>
+    <a href="community">Community</a>
+</nav>
+
+<section class="hero">
+    <h2>Explore Internship Opportunities</h2>
+    <p>Build your skills, gain experience and prepare for your career.</p>
+</section>
+
+<div class="container">
+
+    <h2>Popular Internship Domains</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <span class="tag">Technology</span>
+            <h3>Python Development</h3>
+            <p>Learn Python programming, application development and problem solving.</p>
+            <p><strong>Skills:</strong> Python, Flask, SQL</p>
+            <a href="https://www.internshala.com/" target="_blank" rel="noopener noreferrer" class="button">Explore Opportunities</a>
+        </div>
+
+        <div class="card">
+            <span class="tag">Web Development</span>
+            <h3>Web Development</h3>
+            <p>Develop modern websites and interactive web applications.</p>
+            <p><strong>Skills:</strong> HTML, CSS, JavaScript</p>
+            <a href="https://www.internshala.com/" target="_blank" rel="noopener noreferrer" class="button">Explore Opportunities</a>
+        </div>
+
+        <div class="card">
+            <span class="tag">Artificial Intelligence</span>
+            <h3>AI & Machine Learning</h3>
+            <p>Explore artificial intelligence, machine learning and data analysis.</p>
+            <p><strong>Skills:</strong> Python, ML, Data Science</p>
+            <a href="https://www.internshala.com/" target="_blank" rel="noopener noreferrer" class="button">Explore Opportunities</a>
+        </div>
+
+        <div class="card">
+            <span class="tag">Creative Technology</span>
+            <h3>UI / UX Design</h3>
+            <p>Design attractive and user-friendly website and application interfaces.</p>
+            <p><strong>Skills:</strong> Figma, Design, Creativity</p>
+            <a href="https://www.internshala.com/" target="_blank" rel="noopener noreferrer" class="button">Explore Opportunities</a>
+        </div>
+
+        <div class="card">
+            <span class="tag">Data</span>
+            <h3>Data Analytics</h3>
+            <p>Understand datasets and create meaningful reports and visualizations.</p>
+            <p><strong>Skills:</strong> Excel, SQL, Python</p>
+            <a href="https://www.internshala.com/" target="_blank" rel="noopener noreferrer" class="button">Explore Opportunities</a>
+        </div>
+
+        <div class="card">
+            <span class="tag">Cyber Security</span>
+            <h3>Cyber Security</h3>
+            <p>Learn about network security, system protection and security practices.</p>
+            <p><strong>Skills:</strong> Networking, Linux, Security</p>
+            <a href="https://www.internshala.com/" target="_blank" rel="noopener noreferrer" class="button">Explore Opportunities</a>
+        </div>
+
+    </div>
+
+    <div class="tips">
+        <h2>Internship Preparation Tips</h2>
+        <p>✔ Create a professional resume.</p>
+        <p>✔ Build practical projects.</p>
+        <p>✔ Improve communication skills.</p>
+        <p>✔ Learn industry-relevant technologies.</p>
+        <p>✔ Prepare for technical interviews.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 CampusConnect | Smart Student Hub</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials | CampusConnect</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fc;
+            color: #222;
+        }
+
+        header {
+            background: #173b67;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            font-size: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 45px 20px;
+            background: #e3edff;
+        }
+
+        .hero h1 {
+            color: #173b67;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .container h2 {
+            color: #173b67;
+            margin-bottom: 25px;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .material-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .material-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .material-card h3 {
+            color: #173b67;
+            margin-bottom: 12px;
+        }
+
+        .material-card p {
+            color: #666;
+            line-height: 1.6;
+            min-height: 65px;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #1769aa;
+            color: white;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .download-btn:hover {
+            background: #104675;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background: #888;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        footer {
+            background: #173b67;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>CampusConnect</h2>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about">About</a>
+        <a href="dashboard">Dashboard</a>
+        <a href="events">Events</a>
+        <a href="materials">Study Materials</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>📚 Study Materials</h1>
+    <p>Learn, explore and improve your technical knowledge.</p>
+</section>
+
+<div class="container">
+
+    <h2>Available Study Materials</h2>
+
+    <div class="materials-grid">
+
+        <!-- Computer Networks -->
+        <div class="material-card">
+            <div class="material-icon">🌐</div>
+            <h3>Computer Networks</h3>
+            <p>Learn network fundamentals, topologies, protocols, OSI model and TCP/IP.</p>
+
+            <a href="static/materials/Computer_Networks_Notes.pdf"
+               class="download-btn" target="_blank">
+                Open Study Material
+            </a>
+        </div>
+
+        <!-- Web Technology -->
+        <div class="material-card">
+            <div class="material-icon">💻</div>
+            <h3>Web Technology</h3>
+            <p>Study HTML, CSS, JavaScript, web hosting, HTTP and responsive web design.</p>
+
+            <a href="static/materials/Web_Technology_Notes.pdf"
+               class="download-btn" target="_blank">
+                Open Study Material
+            </a>
+        </div>
+
+        <!-- Artificial Intelligence -->
+        <div class="material-card">
+            <div class="material-icon">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Explore AI concepts, intelligent agents, search algorithms and machine learning.</p>
+
+            <span class="coming-soon">Coming Soon</span>
+        </div>
+
+        <!-- Software Engineering -->
+        <div class="material-card">
+            <div class="material-icon">⚙️</div>
+            <h3>Software Engineering</h3>
+            <p>Learn software development models, requirements, design and testing.</p>
+
+            <span class="coming-soon">Coming Soon</span>
+        </div>
+
+        <!-- Previous Question Papers -->
+        <div class="material-card">
+            <div class="material-icon">📝</div>
+            <h3>Previous Question Papers</h3>
+            <p>Prepare for examinations using previous question papers.</p>
+
+            <span class="coming-soon">Coming Soon</span>
+        </div>
+
+        <!-- Programming Notes -->
+        <div class="material-card">
+            <div class="material-icon">👨‍💻</div>
+            <h3>Programming Notes</h3>
+            <p>Improve your programming skills with useful coding notes and examples.</p>
+
+            <span class="coming-soon">Coming Soon</span>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 CampusConnect | Connect. Learn. Explore. Grow.</p>
+</footer>
+
+</body>
+</html>

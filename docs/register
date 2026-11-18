@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Registration | CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="static/css/style.css">
+
+    <style>
+        .register-section {
+            min-height: 85vh;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-box {
+            width: 100%;
+            max-width: 550px;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .register-box h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .register-box p {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .register-box label {
+            display: block;
+            margin: 15px 0 7px;
+            font-weight: 600;
+        }
+
+        .register-box input,
+        .register-box select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .register-box button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            background: #6554ee;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .success-message {
+            background: #d9fbe5;
+            color: #087b38;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .error-message {
+            background: #ffe0e0;
+            color: #b00020;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">CampusConnect.</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/events">Events</a>
+        <a href="/materials">Study Materials</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <a href="/dashboard" class="primary-btn">Dashboard</a>
+</nav>
+
+<section class="register-section">
+
+    <div class="register-box">
+
+        <h1>Event Registration 🎉</h1>
+
+        <p>Register for your favourite college event.</p>
+
+        
+
+        
+
+        <form action="register" method="POST">
+
+            <label>Student Name</label>
+            <input type="text"
+                   name="student_name"
+                   placeholder="Enter your full name"
+                   required>
+
+            <label>USN</label>
+            <input type="text"
+                   name="usn"
+                   placeholder="Enter your USN"
+                   required>
+
+            <label>Email Address</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label>Department</label>
+            <select name="department" required>
+                <option value="">Select Department</option>
+                <option>Computer Science and Engineering</option>
+                <option>Information Science</option>
+                <option>Electronics and Communication</option>
+                <option>Mechanical Engineering</option>
+                <option>Civil Engineering</option>
+            </select>
+
+            <label>Select Event</label>
+
+            <select name="event_name" required>
+
+                <option value="">Choose an Event</option>
+
+                <optgroup label="Technical Events">
+
+                    <option value="Web Development Workshop"
+                        >
+                        Web Development Workshop
+                    </option>
+
+                    <option value="AI & Innovation"
+                        >
+                        AI &amp; Innovation
+                    </option>
+
+                    <option value="Project Competition"
+                        >
+                        Project Competition
+                    </option>
+
+                    <option value="Technical Quiz"
+                        >
+                        Technical Quiz
+                    </option>
+
+                </optgroup>
+
+                <optgroup label="Cultural Activities">
+
+                    <option value="Dance Competition"
+                        >
+                        Dance Competition
+                    </option>
+
+                    <option value="Singing Competition"
+                        >
+                        Singing Competition
+                    </option>
+
+                    <option value="Drama & Skit"
+                        >
+                        Drama &amp; Skit
+                    </option>
+
+                    <option value="Traditional Day"
+                        >
+                        Traditional Day
+                    </option>
+
+                </optgroup>
+
+            </select>
+
+            <button type="submit">
+                Register Now
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    <p>© 2026 CampusConnect | Smart Student Hub</p>
+</footer>
+
+</body>
+</html>

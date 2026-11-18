@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>     
+<meta charset="UTF-8"> 
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CampusConnect | GDG on Campus - RIT Hassan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #ffffff;
+        color: #202044;
+    }
+
+    /* NAVBAR */
+
+    header {
+        width: 100%;
+        padding: 14px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        box-shadow: 0 3px 20px rgba(0,0,0,0.06);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 800;
+        color: #4285F4;
+    }
+
+    .logo img {
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+    }
+
+    .logo span {
+        color: #202044;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 23px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #44445b;
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #4285F4;
+    }
+
+    .nav-button {
+        background: #4285F4;
+        color: white;
+        padding: 11px 20px;
+        border-radius: 8px;
+    }
+
+    .nav-button:hover {
+        background: #2467d5;
+        color: white;
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+        min-height: 590px;
+        padding: 80px 8%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        background: linear-gradient(120deg, #eef4ff, #ffffff, #f1efff);
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .badge {
+        display: inline-block;
+        background: #e5efff;
+        color: #4285F4;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 5vw, 60px);
+        line-height: 1.2;
+        font-weight: 800;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+        color: #4285F4;
+    }
+
+    .hero-content p {
+        color: #68687c;
+        font-size: 15px;
+        line-height: 1.9;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        text-decoration: none;
+        padding: 14px 24px;
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .primary-btn {
+        background: #4285F4;
+        color: white;
+    }
+
+    .primary-btn:hover {
+        background: #2467d5;
+        transform: translateY(-3px);
+    }
+
+    .secondary-btn {
+        border: 1px solid #4285F4;
+        color: #4285F4;
+    }
+
+    .secondary-btn:hover {
+        background: #4285F4;
+        color: white;
+    }
+
+    /* HERO ILLUSTRATION */
+
+    .hero-visual {
+        width: 420px;
+        height: 400px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .circle {
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: linear-gradient(140deg, #4285F4, #8aabff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        box-shadow: 0 25px 60px rgba(66,133,244,0.25);
+    }
+
+    .circle .cap {
+        font-size: 85px;
+    }
+
+    .circle h2 {
+        font-size: 24px;
+    }
+
+    .circle p {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .floating-card {
+        position: absolute;
+        background: white;
+        padding: 17px;
+        border-radius: 13px;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .card-one {
+        top: 45px;
+        left: -5px;
+    }
+
+    .card-two {
+        bottom: 45px;
+        right: -5px;
+    }
+
+    /* ORGANIZATION LOGOS */
+
+    .organizations {
+        padding: 70px 8%;
+        text-align: center;
+        background: white;
+    }
+
+    .section-label {
+        color: #4285F4;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+
+    .organizations h2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .section-description {
+        color: #77778a;
+        font-size: 14px;
+        margin-bottom: 35px;
+    }
+
+    .organization-logos {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .organization-card {
+        background: #ffffff;
+        padding: 25px 15px;
+        border-radius: 15px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 240px;
+    }
+
+    .organization-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(66,133,244,0.15);
+    }
+
+    .organization-card img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+
+    .organization-card h3 {
+        font-size: 15px;
+        margin-top: 18px;
+        color: #202044;
+    }
+
+    /* FEATURES */
+
+    .features {
+        padding: 80px 8%;
+        background: #f7f9ff;
+        text-align: center;
+    }
+
+    .features h2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 45px;
+    }
+
+    .feature-card {
+        padding: 30px 25px;
+        background: white;
+        border-radius: 15px;
+        text-align: left;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        transition: 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 15px 35px rgba(66,133,244,0.12);
+    }
+
+    .feature-icon {
+        width: 58px;
+        height: 58px;
+        background: #eaf1ff;
+        border-radius: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 29px;
+        margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .feature-card p {
+        color: #77778a;
+        font-size: 13px;
+        line-height: 1.8;
+        margin-bottom: 18px;
+    }
+
+    .feature-card a {
+        color: #4285F4;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    /* CALL TO ACTION */
+
+    .cta {
+        padding: 75px 8%;
+        text-align: center;
+        background: linear-gradient(120deg, #4285F4, #7959e8);
+        color: white;
+    }
+
+    .cta h2 {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        font-size: 14px;
+        margin-bottom: 28px;
+        color: #eeeeff;
+    }
+
+    .cta a {
+        display: inline-block;
+        background: white;
+        color: #4285F4;
+        padding: 14px 28px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+    /* FOOTER */
+
+    footer {
+        background: #191932;
+        color: white;
+        padding: 45px 8% 20px;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    footer h2 {
+        color: #8ab4ff;
+        margin-bottom: 12px;
+    }
+
+    footer p {
+        color: #c3c3d3;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .footer-links a {
+        display: block;
+        color: #c3c3d3;
+        text-decoration: none;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+
+    .copyright {
+        text-align: center;
+        border-top: 1px solid #393950;
+        padding-top: 20px;
+        font-size: 12px;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media(max-width: 950px) {
+        .hero {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .buttons {
+            justify-content: center;
+        }
+
+        .feature-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .organization-logos {
+            gap: 15px;
+        }
+    }
+
+    @media(max-width: 650px) {
+        header {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        nav a {
+            font-size: 12px;
+        }
+
+        .hero {
+            padding: 55px 6%;
+        }
+
+        .hero-visual {
+            width: 100%;
+            height: 330px;
+        }
+
+        .circle {
+            width: 240px;
+            height: 240px;
+        }
+
+        .circle .cap {
+            font-size: 60px;
+        }
+
+        .feature-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .organization-logos {
+            grid-template-columns: 1fr;
+        }
+
+        .organizations h2,
+        .features h2,
+        .cta h2 {
+            font-size: 26px;
+        }
+    }
+</style>
+```
+
+\</head>
+
+\<body>
+
+```
+<!-- NAVBAR -->
+
+<header>
+    <a href="/" class="logo">
+        <img src="static/logos/gdg_logo.png"
+             alt="GDG on Campus Logo">
+        <span>CampusConnect.</span>
+    </a>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/events">Events</a>
+        <a href="/materials">Study Materials</a>
+        <a href="/contact">Contact</a>
+        <a href="/dashboard" class="nav-button">Dashboard ↗</a>
+    </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🎓 GDG ON CAMPUS • RIT HASSAN
+        </div>
+
+        <h1>
+            Welcome to <br>
+            <span>GDG on Campus.</span>
+            <br>
+            Connect. Learn. Grow.
+        </h1>
+
+        <p>
+            Welcome to CampusConnect – your smart student hub at
+            Rajeev Institute of Technology, Hassan.
+            Discover exciting technology events, participate in workshops,
+            access study materials and connect with your campus community.
+        </p>
+
+        <div class="buttons">
+            <a href="/events" class="primary-btn">
+                Explore Events →
+            </a>
+
+            <a href="/community" class="secondary-btn">
+                Join Our Community
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+        <div class="circle">
+            <div class="cap">🎓</div>
+            <h2>CampusConnect</h2>
+            <p>Connect. Learn. Explore. Grow.</p>
+        </div>
+
+        <div class="floating-card card-one">
+            📚 Study Materials
+        </div>
+
+        <div class="floating-card card-two">
+            🚀 Career Growth
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- THREE ORGANIZATION LOGOS -->
+
+<section class="organizations">
+
+    <div class="section-label">
+        OUR CAMPUS COMMUNITY
+    </div>
+
+    <h2>Welcome to GDG on Campus</h2>
+
+    <p class="section-description">
+        Google Developer Groups on Campus – RIT Hassan
+    </p>
+
+    <div class="organization-logos">
+
+        <div class="organization-card">
+            <img
+                src="static/logos/gdg_logo.png"
+                alt="GDG on Campus Logo">
+
+            <h3>GDG on Campus</h3>
+        </div>
+
+        <div class="organization-card">
+            <img
+                src="static/logos/rit_logo.png"
+                alt="Rajeev Institute of Technology Logo">
+
+            <h3>Rajeev Institute of Technology</h3>
+        </div>
+
+        <div class="organization-card">
+            <img
+                src="static/logos/cse_logo.jpeg"
+                alt="Computer Science Department Logo">
+
+            <h3>Computer Science Department</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES SECTION -->
+
+<section class="features">
+
+    <div class="section-label">
+        EXPLORE CAMPUSCONNECT
+    </div>
+
+    <h2>Everything You Need in One Place</h2>
+
+    <p class="section-description">
+        Learn, participate and grow with your campus community.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">🎉</div>
+
+            <h3>College Events</h3>
+
+            <p>
+                Discover upcoming technical events, workshops,
+                seminars and exciting campus activities.
+            </p>
+
+            <a href="/events">Explore Events →</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📚</div>
+
+            <h3>Study Materials</h3>
+
+            <p>
+                Access subject notes, learning resources
+                and useful academic materials.
+            </p>
+
+            <a href="/materials">View Materials →</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+
+            <h3>Lost & Found</h3>
+
+            <p>
+                Report lost belongings and help other
+                students find their missing items.
+            </p>
+
+            <a href="/lost-found">Explore →</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💼</div>
+
+            <h3>Internship Opportunities</h3>
+
+            <p>
+                Explore internships, career opportunities
+                and professional development resources.
+            </p>
+
+            <a href="/internships">Explore →</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👥</div>
+
+            <h3>Student Community</h3>
+
+            <p>
+                Connect with fellow students, share ideas
+                and collaborate on exciting projects.
+            </p>
+
+            <a href="/community">Join Community →</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+
+            <h3>Student Dashboard</h3>
+
+            <p>
+                Explore your student hub and access
+                important campus information.
+            </p>
+
+            <a href="/dashboard">Open Dashboard →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <h2>Be Part of Something Bigger!</h2>
+
+    <p>
+        Learn new technologies, meet creative minds
+        and build your future with the campus community.
+    </p>
+
+    <a href="/community">
+        Join Our Community →
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h2>CampusConnect.</h2>
+
+            <p>
+                Your Smart Student Hub.<br>
+                GDG on Campus – RIT Hassan.<br>
+                Connect. Learn. Explore. Grow.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <br>
+
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/events">Events</a>
+            <a href="/materials">Study Materials</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Explore</h3>
+            <br>
+
+            <a href="/community">Community</a>
+            <a href="/internships">Internships</a>
+            <a href="/lost-found">Lost & Found</a>
+            <a href="/contact">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 CampusConnect | GDG on Campus – RIT Hassan.
+        All Rights Reserved.
+    </div>
+
+</footer>
+
+
+</body> 
+</html>

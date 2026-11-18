@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registrations | CampusConnect</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">CampusConnect.</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/events">Events</a>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+</nav>
+
+<section style="padding:60px 8%;">
+    <h1 style="text-align:center;">📋 Event Registrations</h1>
+    <p style="text-align:center;margin:15px;">
+        View all registered students and their events.
+    </p>
+
+    <div style="overflow-x:auto;margin-top:35px;">
+        <table style="width:100%;border-collapse:collapse;background:white;">
+            <tr style="background:#263b80;color:white;">
+                <th style="padding:15px;">Student Name</th>
+                <th>USN</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Event Name</th>
+                <th>Registered At</th>
+            </tr>
+
+            
+            <tr style="text-align:center;border-bottom:1px solid #ddd;">
+                <td style="padding:14px;">bhavani</td>
+                <td>4RA24CS012</td>
+                <td>bhavanib98025@gmail.com</td>
+                <td>Computer Science and Engineering</td>
+                <td>Web Development Workshop</td>
+                <td>2026-11-18 07:27:20</td>
+            </tr>
+            
+            <tr style="text-align:center;border-bottom:1px solid #ddd;">
+                <td style="padding:14px;">gowthami y</td>
+                <td>4RA24CS037</td>
+                <td>gowthami19nov@gmail.com</td>
+                <td>Computer Science and Engineering</td>
+                <td>AI &amp; Innovation</td>
+                <td>2026-11-18 06:53:34</td>
+            </tr>
+            
+            <tr style="text-align:center;border-bottom:1px solid #ddd;">
+                <td style="padding:14px;">bhavani</td>
+                <td>4RA24CS012</td>
+                <td>bhavanib98025@gmail.com</td>
+                <td>Civil Engineering</td>
+                <td>Technical Quiz</td>
+                <td>2026-11-18 05:39:02</td>
+            </tr>
+            
+            <tr style="text-align:center;border-bottom:1px solid #ddd;">
+                <td style="padding:14px;">bhavani</td>
+                <td>4RA24CS012</td>
+                <td>bhavanib98025@gmail.com</td>
+                <td>Computer Science and Engineering</td>
+                <td>Technical Quiz</td>
+                <td>2026-11-18 05:10:05</td>
+            </tr>
+            
+        </table>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 CampusConnect | Smart Student Hub</p>
+</footer>
+
+</body>
+</html>
