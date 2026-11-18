@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">CampusConnect</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/events">Events</a>
+            <a href="/materials">Materials</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Your Dashboard!</h1>
+            <p>Connect. Learn. Explore. Grow.</p>
+            <a href="/events" class="primary-btn">Explore Events</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Student Services</h2>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <h3>📅 College Events</h3>
+                <p>Discover upcoming college events.</p>
+                <a href="/events">Explore</a>
+            </div>
+
+            <div class="feature-card">
+                <h3>📚 Study Materials</h3>
+                <p>Access notes and learning resources.</p>
+                <a href="/materials">Explore</a>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔍 Lost & Found</h3>
+                <p>Find or report lost belongings.</p>
+                <a href="/lost-found">Explore</a>
+            </div>
+
+            <div class="feature-card">
+                <h3>💼 Internships</h3>
+                <p>Explore internship opportunities.</p>
+                <a href="/internships">Explore</a>
+            </div>
+
+            <div class="feature-card">
+                <h3>👥 Student Community</h3>
+                <p>Connect with other students.</p>
+                <a href="/community">Explore</a>
+            </div>
+
+            <div class="feature-card">
+                <h3>📩 Contact</h3>
+                <p>Contact the CampusConnect team.</p>
+                <a href="/contact">Explore</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 CampusConnect | Smart Student Hub</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

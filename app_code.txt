@@ -1,0 +1,140 @@
+from flask import Flask, render_template, request, redirect, url_for, flash
+from database import get_connection, create_database
+
+app = Flask(__name__)
+app.secret_key = "campusconnect_secret_key"
+
+create_database()
+
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+
+@app.route("/events")
+def events():
+    return render_template("events.html")
+
+
+@app.route("/materials")
+def materials():
+    return render_template("materials.html")
+
+
+# LOST AND FOUND
+@app.route("/lost-found", methods=["GET", "POST"])
+def lost_found():
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    if request.method == "POST":
+
+        item_name = request.form.get("item_name", "").strip()
+        description = request.form.get("description", "").strip()
+        location = request.form.get("location", "").strip()
+        status = request.form.get("report_type", "Lost").strip()
+
+        if not item_name or not description or not location:
+            connection.close()
+            flash("Please fill in all required fields.", "error")
+            return redirect(url_for("lost_found"))
+
+        if status not in ["Lost", "Found"]:
+            status = "Lost"
+
+        cursor.execute("""
+            INSERT INTO lost_found
+            (item_name, description, location, status)
+            VALUES (?, ?, ?, ?)
+        """, (item_name, description, location, status))
+
+        connection.commit()
+        connection.close()
+
+        flash("Your report has been submitted successfully!", "success")
+        return redirect(url_for("lost_found"))
+
+    cursor.execute("""
+        SELECT * FROM lost_found
+        ORDER BY id DESC
+    """)
+
+    items = cursor.fetchall()
+    connection.close()
+
+    return render_template("lost_found.html", items=items)
+
+
+@app.route("/internships")
+def internships():
+    return render_template("internships.html")
+
+
+@app.route("/community")
+def community():
+    return render_template("community.html")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+
+# EVENT REGISTRATION
+@app.route("/register", methods=["GET", "POST"])
+def register():
+
+    if request.method == "POST":
+
+        student_name = request.form.get("student_name")
+        usn = request.form.get("usn")
+        email = request.form.get("email")
+        department = request.form.get("department")
+        event_name = request.form.get("event_name")
+
+        connection = get_connection()
+        cursor = connection.cursor()
+
+        cursor.execute("""
+            INSERT INTO registrations
+            (student_name, usn, email, department, event_name)
+            VALUES (?, ?, ?, ?, ?)
+        """, (
+            student_name,
+            usn,
+            email,
+            department,
+            event_name
+        ))
+
+        connection.commit()
+        connection.close()
+
+        return render_template(
+            "registration.html",
+            success="Registration completed successfully!",
+            selected_event=event_name
+        )
+
+    selected_event = request.args.get("event", "")
+
+    return render_template(
+        "registration.html",
+        selected_event=selected_event
+    )
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

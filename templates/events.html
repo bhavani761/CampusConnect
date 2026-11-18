@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Events | CampusConnect</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .events-section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .event-heading {
+            margin: 45px 0 25px;
+            color: #263b80;
+        }
+
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            padding: 25px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .feature-card h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            margin: 10px 0;
+        }
+
+        .feature-card .primary-btn {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">CampusConnect.</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/events">Events</a>
+        <a href="/materials">Study Materials</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <a href="/dashboard" class="primary-btn">Dashboard</a>
+</nav>
+
+<section class="events-section">
+
+    <h1>Explore College Events 🎉</h1>
+
+    <p>Discover workshops, competitions and exciting campus activities.</p>
+
+    <!-- TECHNICAL EVENTS -->
+
+    <h2 class="event-heading">💻 Technical Events</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <h2>💻</h2>
+            <h3>Web Development Workshop</h3>
+            <p>Learn HTML, CSS and JavaScript through practical sessions.</p>
+            <p><strong>Date:</strong> 25 November 2026</p>
+            <p><strong>Venue:</strong> Computer Lab</p>
+            <a href="{{ url_for('register', event='Web Development Workshop') }}" class="primary-btn">Register Now</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>🤖</h2>
+            <h3>AI &amp; Innovation</h3>
+            <p>Explore Artificial Intelligence and innovative technologies.</p>
+            <p><strong>Date:</strong> 28 November 2026</p>
+            <p><strong>Venue:</strong> Seminar Hall</p>
+            <a href="{{ url_for('register', event='AI & Innovation') }}" class="primary-btn">Register Now</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>🏆</h2>
+            <h3>Project Competition</h3>
+            <p>Showcase your creativity and demonstrate your projects.</p>
+            <p><strong>Date:</strong> 5 December 2026</p>
+            <p><strong>Venue:</strong> College Auditorium</p>
+            <a href="{{ url_for('register', event='Project Competition') }}" class="primary-btn">Register Now</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>🧠</h2>
+            <h3>Technical Quiz</h3>
+            <p>Test your technical knowledge and challenge your friends.</p>
+            <p><strong>Date:</strong> 10 December 2026</p>
+            <p><strong>Venue:</strong> Classroom Block</p>
+            <a href="{{ url_for('register', event='Technical Quiz') }}" class="primary-btn">Register Now</a>
+        </div>
+
+    </div>
+
+    <!-- CULTURAL ACTIVITIES -->
+
+    <h2 class="event-heading">🎭 Cultural Activities</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <h2>💃</h2>
+            <h3>Dance Competition</h3>
+            <p>Show your dancing talent through solo and group performances.</p>
+            <p><strong>Date:</strong> 12 December 2026</p>
+            <p><strong>Venue:</strong> College Auditorium</p>
+            <a href="{{ url_for('register', event='Dance Competition') }}" class="primary-btn">Register Now</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>🎤</h2>
+            <h3>Singing Competition</h3>
+            <p>Showcase your singing talent and entertain the audience.</p>
+            <p><strong>Date:</strong> 14 December 2026</p>
+            <p><strong>Venue:</strong> Seminar Hall</p>
+            <a href="{{ url_for('register', event='Singing Competition') }}" class="primary-btn">Register Now</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>🎭</h2>
+            <h3>Drama &amp; Skit</h3>
+            <p>Express your creativity through acting and stage performances.</p>
+            <p><strong>Date:</strong> 16 December 2026</p>
+            <p><strong>Venue:</strong> College Auditorium</p>
+            <a href="{{ url_for('register', event='Drama & Skit') }}" class="primary-btn">Register Now</a>
+        </div>
+
+        <div class="feature-card">
+            <h2>👘</h2>
+            <h3>Traditional Day</h3>
+            <p>Celebrate Indian culture, traditions and traditional clothing.</p>
+            <p><strong>Date:</strong> 18 December 2026</p>
+            <p><strong>Venue:</strong> College Campus</p>
+            <a href="{{ url_for('register', event='Traditional Day') }}" class="primary-btn">Register Now</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    <p>© 2026 CampusConnect | Smart Student Hub</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

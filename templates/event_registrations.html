@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registrations | CampusConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">CampusConnect.</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/events">Events</a>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+</nav>
+
+<section style="padding:60px 8%;">
+    <h1 style="text-align:center;">📋 Event Registrations</h1>
+    <p style="text-align:center;margin:15px;">
+        View all registered students and their events.
+    </p>
+
+    <div style="overflow-x:auto;margin-top:35px;">
+        <table style="width:100%;border-collapse:collapse;background:white;">
+            <tr style="background:#263b80;color:white;">
+                <th style="padding:15px;">Student Name</th>
+                <th>USN</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Event Name</th>
+                <th>Registered At</th>
+            </tr>
+
+            {% for student in registrations %}
+            <tr style="text-align:center;border-bottom:1px solid #ddd;">
+                <td style="padding:14px;">{{ student.student_name }}</td>
+                <td>{{ student.usn }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.department }}</td>
+                <td>{{ student.event_name }}</td>
+                <td>{{ student.registered_at }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6" style="padding:20px;text-align:center;">
+                    No registrations found.
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 CampusConnect | Smart Student Hub</p>
+</footer>
+
+</body>
+</html>
